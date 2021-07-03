@@ -1,0 +1,143 @@
+.login-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex: 50%;
+  flex-grow: 1;
+}
+.card {
+  border: 2px solid lightgray;
+  border-radius: 24px;
+  padding: 10px;
+  text-align: left;
+}
+.form-wrapper {
+  padding-left: 5%;
+}
+.row {
+  width: 100%;
+}
+.login-col-6 {
+  width: 50%;
+  margin: 10px 20px;
+}
+.tick-emoji {
+  color: #5cdb95;
+}
+h1,
+h6 {
+  color: #05386b;
+}
+.label {
+  color: #05386b;
+  font-weight: 700;
+}
+.form-field {
+  margin-top: 20px;
+  text-align: left;
+}
+fieldset {
+  border: none;
+}
+
+input[type='text'],
+input[type='password'] {
+  width: 300px;
+  height: 30px;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #5cdb95;
+  margin-top: 10px;
+}
+
+.button {
+  border-radius: 24px;
+  height: 30px;
+  width: 80px;
+  outline: none;
+  background-color: #5cdb95;
+  border: 2px solid #5cdb95;
+  color: #05386b;
+  font-weight: 700;
+  font-size: medium;
+}
+
+.button-row {
+  width: 300px;
+}
+.register-btn {
+  float: right;
+  margin-right: 10px;
+}
+
+.submit-btn {
+  margin-left: 10px;
+}
+.des {
+  color: #05386b;
+}
+.form-title {
+  color: #05386b;
+}
+.cup-img {
+  width: 300px;
+  height: 300px;
+}
+.img-card {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.rotation {
+  height: 98%;
+  position: absolute;
+  border-radius: 50%;
+  animation: rotate 10s ease-in-out 0.5s infinite alternate none;
+}
+.fa-searchengin {
+  position: absolute;
+  font-size: xxx-large;
+  left: 50%;
+  color: #05386b;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login-wrapper {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .login-col-6 {
+    width: 95%;
+  }
+  .form-wrapper {
+    padding-left: 20%;
+  }
+  .register-btn {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 452px) {
+  .login-col-6 {
+    margin: 10px;
+  }
+  .form-wrapper {
+    padding-left: 5%;
+  }
+  input[type='text'],
+  input[type='password'],
+  .button-row {
+    width: 250px;
+  }
+}
