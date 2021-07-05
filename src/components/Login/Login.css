@@ -40,8 +40,8 @@ fieldset {
   border: none;
 }
 
-input[type='text'],
-input[type='password'] {
+input[type="text"],
+input[type="password"] {
   width: 300px;
   height: 30px;
   outline: none;
@@ -60,6 +60,9 @@ input[type='password'] {
   color: #05386b;
   font-weight: 700;
   font-size: medium;
+}
+.button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 2px 4px #5cdb95;
 }
 
 .button-row {
@@ -135,8 +138,8 @@ input[type='password'] {
   .form-wrapper {
     padding-left: 5%;
   }
-  input[type='text'],
-  input[type='password'],
+  input[type="text"],
+  input[type="password"],
   .button-row {
     width: 250px;
   }
