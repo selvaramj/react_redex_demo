@@ -4,27 +4,39 @@ import Modal from "../Model";
 const FooterSection = () => {
   const [linkText, setLinkText] = useState("");
   const [isModelOpened, setModelOpen] = useState(false);
-  const refElement = useRef(null);
-
-  useEffect(() => {
-    console.log(refElement.current);
-    if (refElement.current) refElement.current.focus();
-  }, [isModelOpened]);
+  const [currentElement, setCurrentElement] = useState("");
 
   const handleModel = () => {
-    setModelOpen((prevResult) => !prevResult);
-    console.log(isModelOpened, linkText);
+    setModelOpen(!isModelOpened);
+  };
+
+  const ModalProps = {
+    title: "Sorry for inconvinence...",
+    content: (
+      <>
+        <p>Currently `{linkText} page under maintainence`</p>
+        <i>Please, Try Again Later..</i>
+      </>
+    ),
+    agreeText: "",
+    cancel: true,
+    handleModel: handleModel,
+    currentElement: currentElement,
   };
 
   const handleClick = (event) => {
     if (event.target.text) {
       setLinkText(event.target.text);
+      setCurrentElement(event.target);
       handleModel();
     }
   };
 
   return (
-    <footer className="footer">
+    <footer
+      className="footer"
+      onClick={(ele) => console.log("clicked", ele.target)}
+    >
       <nav className="footer-main-navigation">
         <ul className="footer-nav-links">
           <li>
@@ -48,26 +60,7 @@ const FooterSection = () => {
             </a>
           </li>
         </ul>
-        {isModelOpened && (
-          <Modal cssClass="footer-modal">
-            <div className="modal">
-              <div className="footer-modal-data">
-                <h1>Sorry for inconvinence...</h1>
-                <p>Currently `{linkText} page under maintainence`</p>
-                <i>Please, Try Again Later..</i>
-                <div className="button-row">
-                  <button
-                    className="close-button"
-                    onClick={() => handleModel()}
-                    ref={refElement}
-                  >
-                    close
-                  </button>
-                </div>
-              </div>
-            </div>
-          </Modal>
-        )}
+        {isModelOpened && <Modal {...ModalProps} />}
         <ul className="social-media-links">
           <li>
             <a href="https://www.instagram.com/accounts/login/" target="_blank">
